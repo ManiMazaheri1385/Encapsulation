@@ -9,7 +9,7 @@ public class SavingAccount extends BankAccount {
 
     @Override
     public void calculateInterest() {
-        System.out.println("Your Saving account profit:");
+        System.out.println(getAccountHolderName() + " Saving account profit:");
         this.deposit(interestRate * balance);
     }
 

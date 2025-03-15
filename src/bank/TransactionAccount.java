@@ -9,19 +9,22 @@ public class TransactionAccount extends BankAccount {
 
     @Override
     public void calculateInterest() {
-        System.out.println("There is no interest available for transaction account");
+        System.out.println("There is no interest available for transaction account.");
     }
 
     @Override
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("You can't withdraw negative amount");
+            System.out.println("You can't withdraw negative or zero amount.");
+            return;
         }
         else if (balance + overDraftLimit < amount) {
-            System.out.println("You can't withdraw less than balance plus overdraft limit");
+            System.out.println("You can't withdraw less than balance plus overdraft limit.");
+            return;
         }
-        System.out.println("$" + amount + " has been withdrawn from your account");
-        System.out.println("Your balance is now $" + balance);
+        balance -= amount;
+        System.out.println("$" + amount + " has been withdrawn from " + getAccountHolderName() + " account.");
+        System.out.println(getAccountHolderName() + " balance is now $" + balance);
     }
 
 }

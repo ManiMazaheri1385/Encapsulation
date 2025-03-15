@@ -15,23 +15,26 @@ public abstract class BankAccount {
 
     public void deposit(double amount) {
         if (amount <= 0) {
-            System.out.println("You can't deposit negative amount");
+            System.out.println("You can't deposit negative amount.");
+            return;
         }
         balance += amount;
-        System.out.println("Deposited $" + amount + " to your account");
-        System.out.println("Your balance is now $" + balance);
+        System.out.println("Deposited $" + amount + " to " + accountHolderName + " account.");
+        System.out.println(accountHolderName + " balance is now $" + balance);
     }
 
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("You can't withdraw negative amount");
+            System.out.println("You can't withdraw negative or zero amount.");
+            return;
         }
         else if (balance < amount) {
-            System.out.println("You can't withdraw less than balance");
+            System.out.println("You can't withdraw less than balance.");
+            return;
         }
         balance -= amount;
-        System.out.println("$" + amount + " has been withdrawn from your account");
-        System.out.println("Your balance is now $" + balance);
+        System.out.println("$" + amount + " has been withdrawn from " + accountHolderName + " account.");
+        System.out.println(accountHolderName + " balance is now $" + balance);
     }
 
     public double getBalance() {
