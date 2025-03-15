@@ -62,6 +62,8 @@ public class Main {
         System.out.println();
 
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("Account details:");
+        System.out.println();
         melli.showAllBalances();
     }
 }
